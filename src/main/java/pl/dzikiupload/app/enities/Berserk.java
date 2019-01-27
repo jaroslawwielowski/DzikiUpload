@@ -3,11 +3,9 @@ package pl.dzikiupload.app.enities;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
+import pl.dzikiupload.app.dto.BerserkDto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import java.util.UUID;
@@ -36,5 +34,19 @@ public class Berserk {
     public Berserk(@Size(max = 1000) String description, @Email String email) {
         this.description = description;
         this.email = email;
+    }
+//
+//    @Transient
+//    public BerserkDto toDto(){
+//        BerserkDto dto = this.toCollectionlessDto(){
+//            dto.se
+//        }
+//    }
+//
+    private BerserkDto toCollectionlessDto() {
+        BerserkDto dto = new BerserkDto();
+        dto.setDescription(this.description);
+        dto.setEmail(this.email);
+        return dto;
     }
 }

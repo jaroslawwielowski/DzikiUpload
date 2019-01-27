@@ -1,4 +1,4 @@
-package pl.dzikiupload.app.enities;
+package pl.dzikiupload.app.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,25 +15,20 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-public class Berserk {
+public class BerserkDto {
 
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator( name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "id" , columnDefinition = "VARCHAR(255)")
+
     private UUID id;
 
-    @Size(max = 1000)
     private String description;
 
-    @Email
     private String email;
 
 
-    public Berserk() {
+    public BerserkDto() {
     }
 
-    public Berserk(@Size(max = 1000) String description, @Email String email) {
+    public BerserkDto(@Size(max = 1000) String description, @Email String email) {
         this.description = description;
         this.email = email;
     }

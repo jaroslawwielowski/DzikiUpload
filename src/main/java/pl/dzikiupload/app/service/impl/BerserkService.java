@@ -6,7 +6,7 @@ import pl.dzikiupload.app.service.Base;
 import java.util.Collection;
 import java.util.UUID;
 
-public class berserkService implements Base<BerserkDto, UUID> {
+public class BerserkService implements Base<BerserkDto, UUID> {
     @Override
     public BerserkDto save(BerserkDto dto) {
         return null;

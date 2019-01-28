@@ -1,15 +1,13 @@
 package pl.dzikiupload.app.service.impl;
 
-import pl.dzikiupload.app.dto.BerserkDto;
+import pl.dzikiupload.app.enities.Berserk;
 import pl.dzikiupload.app.repository.BerserkRepository;
 import pl.dzikiupload.app.service.Base;
 
 import java.util.Collection;
-import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
-public class BerserkService implements Base<BerserkDto, UUID> {
+public class BerserkService implements Base<Berserk, UUID> {
 
     private final BerserkRepository berserkRepository;
 
@@ -19,17 +17,17 @@ public class BerserkService implements Base<BerserkDto, UUID> {
 
 
     @Override
-    public BerserkDto save(BerserkDto dto) {
+    public Berserk save(Berserk dto) {
         return null;
     }
 
     @Override
-    public BerserkDto update(BerserkDto dto) {
+    public Berserk update(Berserk dto) {
         return null;
     }
 
     @Override
-    public BerserkDto find(UUID id) {
+    public Berserk find(UUID id) {
         return null;
     }
 
@@ -39,7 +37,7 @@ public class BerserkService implements Base<BerserkDto, UUID> {
     }
 
     @Override
-    public Collection<BerserkDto> getall() {
-        return berserkRepository.findAll().stream().collect(Collectors.toList());
+    public Collection<Berserk> getall() {
+        return berserkRepository.findAll();
     }
 }
